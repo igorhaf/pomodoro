@@ -13,7 +13,7 @@ class PomodoroTimer(QWidget):  # QWidget é a classe base para qualquer componen
 
         # Configurações básicas da janela
         self.setWindowTitle("Relógio Pomodoro")  # Título da janela
-        self.setGeometry(100, 100, 300, 200)      # Posição e tamanho (x, y, largura, altura)
+        self.setGeometry(100, 100, 400, 400)      # Posição e tamanho (x, y, largura, altura)
 
         # Tempo padrão do Pomodoro em segundos
         self.work_duration = 25 * 60  # 25 minutos
@@ -26,20 +26,22 @@ class PomodoroTimer(QWidget):  # QWidget é a classe base para qualquer componen
 
         # Cria o rótulo do tempo (timer)
         self.label = QLabel(self.format_time(self.time_left), self)  # Mostra tempo restante
-        self.label.setStyleSheet("font-size: 36px; text-align: center")  # Estilo CSS
+        self.label.setStyleSheet("font-size: 60px; text-align: center")  # Estilo CSS
         self.label.setAlignment(Qt.AlignCenter)  # Centraliza o texto
 
         # Cria o rótulo para mostrar se está em modo trabalho ou pausa
         self.status = QLabel("Modo: Trabalho", self)
-        self.status.setStyleSheet("font-size: 18px; text-align: center")
+        self.status.setStyleSheet("font-size: 60px; text-align: center")
         self.status.setAlignment(Qt.AlignCenter)
 
         # Botão de iniciar o Pomodoro
         self.start_button = QPushButton("Iniciar")
+        self.start_button.setStyleSheet("font-size: 50px; height: 60px; text-align: center")
         self.start_button.clicked.connect(self.start_timer)  # Ao clicar, chama start_timer()
 
         # Botão para reiniciar o Pomodoro
         self.reset_button = QPushButton("Reiniciar")
+        self.reset_button.setStyleSheet("font-size: 50px; height: 60px; text-align: center")
         self.reset_button.clicked.connect(self.reset_timer)  # Ao clicar, chama reset_timer()
 
         # Adiciona os elementos no layout
